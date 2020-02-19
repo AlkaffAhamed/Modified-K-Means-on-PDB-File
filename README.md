@@ -23,17 +23,16 @@ The following steps are taken to determine the clusters of atoms:
 
 1. Read the PDB File and extract the data 
 2. Run K-Means for an arbitrary number of clusters (the script uses 5 clusters) and plot it 
-3. Plot the *modified WSS* to determine optimum number of clusters. The optimum number of clusters is determined by the *Elbow Curve*<br/>or<br/>Plot the *BSS/WSS* to determine optimum number of clusters. The optimum number of clusters is determined by a *sudden Peak* 
+3. Plot the *modified WSS* to determine optimum number of clusters. The optimum number of clusters is determined by the *Elbow Curve*<br/>or<br/>Plot the <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{BSS}{WSS}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{BSS}{WSS}" title="\frac{BSS}{WSS}" /></a> to determine optimum number of clusters. The optimum number of clusters is determined by a *sudden Peak* 
 4. Run K-Means for the selected optimum number of clusters and plot it
 
 ### Modification on the WSS function 
 
 The original WSS function has the following formula: 
-$$
-WSS[i] = \sum{x}
-$$
-The WSS function is modified because biological data has very close number of optimum clusters. This modified equation at least helps in identifying the "Elbow Curve" more easily. 
-$$
-WSS[i] = \sqrt[4]{\sum{x^2}}
-$$
+<br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=WSS[i]&space;=&space;\sum&space;{x}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?WSS[i]&space;=&space;\sum&space;{x}" title="WSS[i] = \sum {x}" /></a>
+<br/>
+The WSS function is modified because biological data has very close number of optimum clusters. This modified equation at least helps in identifying the "Elbow Curve" more easily. The following is the modified equation: 
+<br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=WSS[i]&space;=&space;\sqrt[4]{\sum&space;{x^2}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?WSS[i]&space;=&space;\sqrt[4]{\sum&space;{x^2}}" title="WSS[i] = \sqrt[4]{\sum {x^2}}" /></a>
 
